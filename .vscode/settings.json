@@ -40,5 +40,25 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
-  "emmet.showExpandedAbbreviation": "never"
+  "emmet.showExpandedAbbreviation": "never",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#f990a7",
+    "activityBar.background": "#f990a7",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#e7fde1",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#f990a7",
+    "statusBar.background": "#f66080",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#f33059",
+    "statusBarItem.remoteBackground": "#f66080",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#f66080",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#f6608099",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#f66080"
 }

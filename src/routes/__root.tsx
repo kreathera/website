@@ -1,17 +1,17 @@
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-
 import appCss from "../styles.css?url";
 
+// ROUTE -----------------------------------------------------------------------------------------------------------------------------------
 export const Route = createRootRoute({
   head: () => ({
     meta: [{ charSet: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }, { title: "TanStack Start Starter" }],
     links: [{ rel: "stylesheet", href: appCss }],
   }),
-
   shellComponent: RootDocument,
 });
 
-function RootDocument({ children }: { children: React.ReactNode }) {
+// MAIN ------------------------------------------------------------------------------------------------------------------------------------
+function RootDocument({ children }: RootDocumentProps) {
   return (
     <html lang="fr">
       <head>
@@ -24,3 +24,4 @@ function RootDocument({ children }: { children: React.ReactNode }) {
     </html>
   );
 }
+type RootDocumentProps = { children: React.ReactNode };
