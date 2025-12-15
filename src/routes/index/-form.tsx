@@ -119,7 +119,7 @@ export function SurveyForm() {
         </Card>
         <ItemGroup className="grid grid-cols-1 gap-4 text-center md:grid-cols-3">
           {sentences.map(({ description, id, title }, i) => (
-            <Item className="items-start bg-white" key={id} variant="outline">
+            <Item className="items-start bg-white dark:bg-input/30" key={id} role="listitem" variant="outline">
               <ItemContent className="items-center text-base">
                 <ItemTitle className={cn("font-heading font-light text-lg uppercase", i % 2 === 0 && "text-pink-400 dark:text-pink-400")}>
                   {title}
