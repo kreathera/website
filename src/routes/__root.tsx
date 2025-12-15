@@ -48,7 +48,7 @@ function RootDocument({ children }: RootDocumentProps) {
       <head>
         <HeadContent />
         {/* biome-ignore lint/nursery/noSyncScripts: <explanation> */}
-        <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" />
+        {/* <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" /> */}
       </head>
       <body>
         <ThemeProvider>
