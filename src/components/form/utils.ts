@@ -1,0 +1,14 @@
+import { z } from "zod/mini";
+
+// CONST -----------------------------------------------------------------------------------------------------------------------------------
+const fieldTypes = ["checkbox", "radio", "sortable", "textarea"] as const;
+
+// SCHEMAS ---------------------------------------------------------------------------------------------------------------------------------
+const zFieldType = z.enum(fieldTypes);
+export const zSurveyItem = z.readonly(z.object({ id: z.string(), label: z.string() }));
+export const zSurveyEditableItem = z.object({ editable: z.optional(z.boolean()), id: z.string(), label: z.string() });
+
+// TYPES -----------------------------------------------------------------------------------------------------------------------------------
+export type FieldType = z.infer<typeof zFieldType>;
+export type SurveyItem = z.infer<typeof zSurveyItem>;
+export type SurveyEditableItem = z.infer<typeof zSurveyEditableItem>;
