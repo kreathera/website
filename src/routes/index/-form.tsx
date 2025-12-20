@@ -29,6 +29,7 @@ export function SurveyForm() {
           y: (rect.top + rect.height / 2) / window.innerHeight,
         },
       });
+      form.reset();
       toast.success("Merci ! Nous avons bien reçu vos réponses.");
     },
   });
