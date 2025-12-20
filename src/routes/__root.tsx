@@ -36,8 +36,9 @@ export const Route = createRootRoute({
 
 // MAIN ------------------------------------------------------------------------------------------------------------------------------------
 const ROOT = {
-  container: cva("container relative mx-auto flex flex-col px-4 pt-28 pb-8 md:px-8"),
-  footer: cva("flex w-full items-center bg-secondary px-8 py-4 text-secondary-foreground"),
+  body: cva("flex min-h-screen flex-col bg-background text-foreground"),
+  container: cva("container relative mx-auto flex flex-1 flex-col px-4 pt-28 pb-8 md:px-8"),
+  footer: cva("flex w-full flex-none items-center bg-secondary px-8 py-4 text-secondary-foreground"),
 };
 
 function RootDocument({ children }: RootDocumentProps) {
@@ -50,7 +51,7 @@ function RootDocument({ children }: RootDocumentProps) {
         {/* biome-ignore lint/nursery/noSyncScripts: <explanation> */}
         {/* <script crossOrigin="anonymous" src="//unpkg.com/react-scan/dist/auto.global.js" /> */}
       </head>
-      <body>
+      <body className={ROOT.body()}>
         <ThemeProvider>
           <Bg />
           <div className={ROOT.container()}>

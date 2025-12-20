@@ -1,5 +1,5 @@
 import { cva } from "class-variance-authority";
-import { type Dispatch, type SetStateAction, useState } from "react";
+import { type Dispatch, type SetStateAction, useMemo, useState } from "react";
 import { Checkbox } from "@/components/adapted/checkbox";
 import { Button } from "@/components/ui/button";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
@@ -22,11 +22,12 @@ const CHECKBOX = {
 // MAIN ------------------------------------------------------------------------------------------------------------------------------------
 export default function CheckboxesField({ items: initialItems, ...props }: CheckboxesFieldProps) {
   const { handleChange, state } = useFieldContext<EditableItem[]>();
-
   const [items, setItems] = useState([...initialItems]);
+  const isMax = useMemo(() => items.length - initialItems.length > 4, [initialItems, items]);
 
   const addEditableItem = () => {
-    const newItem = { editable: true, id: `extra${items.length}`, label: "" };
+    if (isMax) return;
+    const newItem = { editable: true, id: `extra${crypto.randomUUID()}`, label: "" };
     setItems([...items, newItem]);
     handleChange([...state.value, newItem]);
   };
@@ -38,7 +39,7 @@ export default function CheckboxesField({ items: initialItems, ...props }: Check
           {items.map((item) => (
             <CheckboxField item={item} items={items} key={item.id} setItems={setItems} />
           ))}
-          <Button className="cursor-pointer" onClick={addEditableItem} size="sm" type="button" variant="secondary">
+          <Button className="cursor-pointer" disabled={isMax} onClick={addEditableItem} size="sm" variant="secondary">
             <span className="icon-[lucide--plus-circle]" /> Ajouter une réponse
           </Button>
         </FieldGroup>

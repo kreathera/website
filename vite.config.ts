@@ -10,7 +10,7 @@ const config = defineConfig({
   plugins: [
     devtools(),
     cloudflare({ viteEnvironment: { name: "ssr" } }),
-    viteTsConfigPaths({ projects: ["./tsconfig.json"] }),
+    viteTsConfigPaths(),
     tailwindcss(),
     tanstackStart({ prerender: { enabled: true } }),
     viteReact(),

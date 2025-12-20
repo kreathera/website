@@ -63,11 +63,6 @@ export function SurveyForm() {
       </h2>
       <form.AppForm>
         <Card className="relative z-10 gap-10">
-          {/* <CardHeader>
-            <CardTitle className="text-center font-heading font-light text-2xl">
-              Pour cela, on aimerait en savoir plus sur vos besoins à l'aide de ce sondage.
-            </CardTitle>
-          </CardHeader> */}
           <CardContent>
             <FieldGroup>
               {survey.map((props, index) => (
@@ -99,22 +94,6 @@ export function SurveyForm() {
                 {({ ConsentField }) => <ConsentField />}
               </form.AppField>
             </FieldGroup>
-            {/* <CardFooter className="mt-10 flex-col items-start gap-4 p-0">
-              <ItemGroup className="grid grid-cols-1 gap-4 text-center md:grid-cols-3">
-                {sentences.map(({ description, id, title }, i) => (
-                  <Item className="items-start" key={id} variant="muted">
-                    <ItemContent className="items-center text-base">
-                      <ItemTitle
-                        className={cn("font-heading font-light text-lg uppercase", i % 2 === 0 && "text-pink-400 dark:text-pink-400")}
-                      >
-                        {title}
-                      </ItemTitle>
-                      {description}
-                    </ItemContent>
-                  </Item>
-                ))}
-              </ItemGroup>
-            </CardFooter> */}
           </CardContent>
         </Card>
         <ItemGroup className="grid grid-cols-1 gap-4 text-center md:grid-cols-3">

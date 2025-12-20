@@ -20,7 +20,10 @@ export default function ConsentField() {
           Ce sondage est réalisé par Samia Mekkas, Grégory Bouteiller et Sébastien Dunand dans le cadre de la conception d’un outil
           numérique pour les thérapeutes. Vos données (prénom, email, profession, etc.) seront utilisées uniquement pour cette étude et
           conservées 12 mois, puis supprimées. Vous pouvez exercer vos droits (accès, rectification, effacement) en écrivant à
-          kreathera@gmail.com
+          <a className="ml-1" href="mailto:contact@kreathera.com">
+            contact@kreathera.com
+          </a>
+          .
         </FieldDescription>
         <SurveyFieldError errors={state.meta.errors} isInvalid={isInvalid} />
       </FieldContent>
