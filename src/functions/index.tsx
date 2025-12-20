@@ -15,6 +15,6 @@ export type RootLayoutData = Awaited<ReturnType<typeof readRootLayout>>;
 export const createSurvey = createServerFn({ method: "POST" })
   .inputValidator(zSurveyCreate)
   .handler(async ({ data }) => {
-    const convex = new ConvexHttpClient(import.meta.env.VITE_CONVEX_URL);
+    const convex = new ConvexHttpClient(process.env.VITE_CONVEX_URL!);
     await convex.mutation(api.surveys.create, data);
   });
