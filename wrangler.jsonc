@@ -18,5 +18,8 @@
       "persist": true,
       "head_sampling_rate": 1
     }
+  },
+  "vars": {
+    "VITE_CONVEX_URL": "https://savory-bullfrog-130.convex.cloud"
   }
 }
